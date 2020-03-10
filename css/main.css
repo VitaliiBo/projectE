@@ -1,0 +1,286 @@
+/* @font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic');
+} */
+:root {
+    --main-bgcolor: #E5E5E5;
+    --footer-bgcolor: #EFEFEF;
+}
+
+html , body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: var(--main-bgcolor);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+.link:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.link:focus {
+    text-decoration: none;
+    color: black;
+}
+
+/*=====HEADER======*/
+.header-box, header {
+    background-color: #fff;
+}
+
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 1150px;
+    max-width: 1196px;
+}
+
+.header-wrapper {
+    height: 113px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-top: 25px;
+}
+
+.contacts {
+    padding-top: 12px;
+    padding-right: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phone {
+    font-weight: 600;
+}
+
+.navigation {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.navigation ul li:nth-child(n+2) {
+    padding-left: 37px;
+}
+
+/*=======MAIN=======*/
+main {
+    /* background-color: var(--main-bgcolor); */
+}
+
+.content {
+    padding-bottom: 59px;
+}
+
+.content-title {
+    padding-top: 69px;
+    padding-left: 20px;
+    font-size: 48px;
+    font-weight: 600;
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.service-wrapper {
+    padding-top: 22px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    line-height: 16px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.service {
+    display: flex;
+    max-height: 74px;
+    max-width: 235px;
+    background-color: #c4c4c4;
+    transition: 0.5s;
+    flex-grow: 1;
+}
+
+.service:hover {
+    background-color: #a1a1a1;
+    
+}
+
+.service .link {
+    display: flex;
+    color: #7D7D7D;
+    flex-grow: 1;
+}
+
+.service-link-text {
+    margin: auto;
+}
+
+.active {
+    background-color: rgb(247, 247, 247);
+    min-height: 80px;
+    transition: 0s;
+}
+
+.active:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.service-content {
+    position: relative;
+    background-color: rgb(247, 247, 247);
+    height: 700px;
+    padding-bottom: 58px;
+}
+.service-text {
+    position: absolute;
+    top: 80px;
+    height: 0px;
+    padding-right: 240px;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: -1;
+}
+.service-text h4,h3,p {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.service-text p {
+    margin-top: 7px;
+}
+
+.service-text h4 {
+    margin-top: 27px;
+}
+
+.service-active {
+    position: relative;
+    top: 0px;
+    padding-top: 37px;
+    opacity: 1;
+    height: auto;
+    z-index: 100;
+}
+
+.callback-popup {
+    padding: 58px 0 ;
+}
+.popup-button {
+    width: 461px;
+    height: 45px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.22em;
+
+    background: #C4C4C4;
+    border-radius: 5px;
+}
+
+.popup-button:hover {
+    cursor: pointer;
+}
+
+/*======FOOTER=======*/
+
+.footer-box, footer {
+    background-color: var(--footer-bgcolor);
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 23px;
+}
+
+.footer .navigation ul {
+    font-size: 10px;
+}
+.footer .contacts {
+    padding-top: 0;
+}
+.footer .contacts .phone {
+    font-weight: 400;
+}
+
+.copyright {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+
+/*======POPUP======*/
+.popup-modal-wrapper {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0, 0.5);
+    transition: 0.3s;
+    /* z-index: 1000; */
+    z-index: -1;
+    opacity: 0;
+}
+
+.popup-modal {
+    position: relative;
+    width: 635px;
+    height: 465px;
+    margin: auto;
+    background-color: #fff;
+    z-index: 1001;
+}
+
+.popup-active {
+    z-index: 1000;
+    opacity: 1;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    margin: 0 auto;
+}
+
+.form-box :nth-child(n+2) {
+    margin-top: 14px;
+}
+
+.checkbox-user-data {
+    display: flex;
+}
+
