@@ -97,24 +97,27 @@
     <div class="popup-modal-wrapper">
         <div class="popup-modal">
             <h3 class="popup-title">Нужна консультация?</h3>
-            <span class="popup-title-text">Пожалуйста, заполните форму ниже,<br>и наши специалисты свяжутся с Вами в ближайшее время.</span>
-            <a href="#" class="popup-close">[x]</a>
+            <p class="popup-title-text">Пожалуйста, заполните форму ниже,<br>и наши специалисты свяжутся с Вами в ближайшее время.</p>
+            <a href="#" class="popup-close">[ x ]</a>
             <div class="form-box">
-                <select name="service" id="service-select">
-                    <option value="service1">Услуга 1</option>
-                    <option value="service2">Услуга 2</option>
-                    <option value="service3">Услуга 3</option>
-                    <option value="service4">Услуга 4</option>
-                    <option value="service5">Услуга 5</option>
+                <span>Тема сообщения:</span>
+                <select name="service" id="service-select" class="field">
+                    <option value="service1" class="field">Услуга 1</option>
+                    <option value="service2" class="field">Услуга 2</option>
+                    <option value="service3" class="field">Услуга 3</option>
+                    <option value="service4" class="field">Услуга 4</option>
+                    <option value="service5" class="field">Услуга 5</option>
                 </select>
-                <input type="name" placeholder="Ваше имя*">
-                <input type="phone" placeholder="Номер телефона*">
+                <input type="name" placeholder="Ваше имя*" class="field">
+                <input type="phone" placeholder="Номер телефона*" class="field">
                 <button class="add-requisites">+ Добавить реквизиты компании (опционально)</button>
             </div>
             <div class="checkbox-user-data">
                 <input type="checkbox" name="" id="" class="chckbx">
-                <span>Даю согласие с </span>
-                <a href="#" class="data-policy">политикой обработки персональных данных</a>
+                <div class="checkbox-text">
+                    <span>Даю согласие с </span>
+                    <a href="#" class="data-policy link">политикой обработки персональных данных</a>        
+                </div>
             </div>
         </div>
     </div>
