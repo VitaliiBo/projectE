@@ -360,7 +360,10 @@ main {
  .services {
      flex-wrap: nowrap;
      padding-bottom: 6px;
-     overflow: hidden;
+     overflow: auto;
+ }
+ .services::-webkit-scrollbar {
+     height: 0px;
  }
 
 }
