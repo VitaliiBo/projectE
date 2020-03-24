@@ -8,7 +8,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
     <title>Element</title>
 </head>
 <body>
@@ -26,13 +26,15 @@
             </div>
         </div>
         <nav class="navigation">
-            <div class="sandwich"></div>
+            <div class="sandwich">
+
+            </div>
             <ul>
                 <li><a href="#" class="link">Главная</a></li>
                 <li><a href="#" class="link">О компании</a></li>
                 <li><a href="#" class="link">Лицензии и Свидетельства</a></li>
                 <li><a href="#" class="link">Нормативы</a></li>
-                <li><a href="#" class="link">Контакты</a></li>
+                <li><a href="./pages/contacts/contacts.html" class="link">Контакты</a></li>
             </ul>
         </nav>
     </div>
@@ -42,11 +44,6 @@
             <h1 class="content-title">Комплексный подход<br>в сфере обеспечения безопасности</h1>
             <section class="service-wrapper">
                 <div class="services dragscroll">
-                    <!-- <div class="service active"><a href="#" class="link" data-service="service1">АУДИТ<br>И КОНСУЛЬТАЦИИ</a></div>
-                    <div class="service"><a href="#" class="link" data-service="service2">ПРОЕКТИРОВАНИЕ<br>И МОНТАЖ</a></div>
-                    <div class="service"><a href="#" class="link" data-service="service3">РАЗРАБОТКА<br>ДОКУМЕНТАЦИИ</a></div>
-                    <div class="service"><a href="#" class="link" data-service="service4">ТЕХ.ОБСЛУЖИВАНИЕ<br>И РЕМОНТ</a></div>
-                    <div class="service"><a href="#" class="link" data-service="service5">ПОЖАРНАЯ<br>БЕЗОПАСНОСТЬ<br>ПОД КЛЮЧ</a></div> -->
                     <div class="service active"><a href="#" class="link" data-service="service1"><span class="service-link-text">АУДИТ<br>И КОНСУЛЬТАЦИИ</span></a></div>
                     <div class="service"><a href="#" class="link" data-service="service2"><span class="service-link-text">ПРОЕКТИРОВАНИЕ<br>И МОНТАЖ</span></a></div>
                     <div class="service"><a href="#" class="link" data-service="service3"><span class="service-link-text">РАЗРАБОТКА<br>ДОКУМЕНТАЦИИ</span></a></div>
@@ -64,8 +61,10 @@
                         <h3>Заголовок 1</h3>
                         <p>Товарищи! укрепление и развитие структуры позволяет оценить значение направлений прогрессивного развития. Равным образом постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки соответствующий условий активизации. С другой стороны новая модель организационной деятельности в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же реализация намеченных плановых заданий позволяет выполнять важные задания по разработке системы обучения кадров, соответствует насущным потребностям.</p>
                     </div>
+                    <div class="service-text" id="service3"></div>
+                    <div class="service-text" id="service4"></div>
+                    <div class="service-text" id="service5"></div>
                     <div class="callback-popup">
-                        <!-- <a href="#" class="link popup-button">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</a> -->
                         <div class="link popup-button">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</div>
                     </div>
                 </div>
@@ -99,31 +98,37 @@
         <div class="popup-modal">
             <h3 class="popup-title">Нужна консультация?</h3>
             <p class="popup-title-text">Пожалуйста, заполните форму ниже,<br>и наши специалисты свяжутся с Вами в ближайшее время.</p>
-            <a href="#" class="popup-close">[ x ]</a>
-            <div class="form-box">
-                <span>Тема сообщения:</span>
-                <select name="service" id="service-select" class="field">
-                    <option value="service1" class="field">Услуга 1</option>
-                    <option value="service2" class="field">Услуга 2</option>
-                    <option value="service3" class="field">Услуга 3</option>
-                    <option value="service4" class="field">Услуга 4</option>
-                    <option value="service5" class="field">Услуга 5</option>
-                </select>
-                <input type="name" placeholder="Ваше имя*" class="field">
-                <input type="phone" placeholder="Номер телефона*" class="field">
-                <button class="add-requisites">+ Добавить реквизиты компании (опционально)</button>
-            </div>
-            <div class="checkbox-user-data">
-                <input type="checkbox" name="" id="" class="chckbx">
-                <div class="checkbox-text">
-                    <span>Даю согласие с </span>
-                    <a href="#" class="data-policy link">политикой обработки персональных данных</a>        
+            <a href="#" class="popup-close link">[ x ]</a>
+            <form action="" id="callback-form">
+                <div class="form-box">
+                    <span>Тема сообщения:</span>
+                    <select name="service" id="service-select" class="field">
+                        <option value="service1" class="field" selected>Услуга 1</option>
+                        <option value="service2" class="field">Услуга 2</option>
+                        <option value="service3" class="field">Услуга 3</option>
+                        <option value="service4" class="field">Услуга 4</option>
+                        <option value="service5" class="field">Услуга 5</option>
+                    </select>
+                    <input type="name" name="name" placeholder="Ваше имя*" class="field" required>
+                    <input type="phone" name="phone" placeholder="Номер телефона*" class="field form-box__phone-field" required>
+                    <button class="add-requisites">+ Добавить реквизиты компании (опционально)</button>
                 </div>
-            </div>
+                <div class="checkbox-user-data">
+                    <input type="checkbox" class="chckbx" required>
+                    <div class="checkbox-text">
+                        <span>Даю согласие с </span>
+                        <a href="#" class="data-policy link">политикой обработки персональных данных</a>        
+                    </div>
+                </div>
+                <button class="form-box__send-button">Отправить</button>
+            </form>
         </div>
     </div>
 </body>
 <link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/middle.css">
+<script src="./js/plugins/dragscroll.js"></script>
+<script src="./js/inputmask.min.js"></script>
+<script src="./js/jquery.inputmask.js"></script>
 <script src="./js/main.js"></script>
-<script src="./js/dragscroll.js"></script>
 </html>
