@@ -2,6 +2,7 @@
     font-family: 'Roboto';
     src: url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic');
 } */
+
 :root {
     --main-bgcolor: #E5E5E5;
     --footer-bgcolor: #EFEFEF;
@@ -343,4 +344,23 @@ main {
 .checkbox-text {
     display: inline-block;
     margin-left: 7px;
+}
+
+@media (min-width: 0px) and (max-width: 1196px) {
+ .wrapper {
+     min-width: 0;
+ }
+ .service {
+     padding: 0 10px;
+     min-height: 74px;
+ }
+ .service:nth-child(n+2){
+     margin-left: 5px;
+ }
+ .services {
+     flex-wrap: nowrap;
+     padding-bottom: 6px;
+     overflow: hidden;
+ }
+
 }
