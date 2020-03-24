@@ -33,4 +33,12 @@ function togglePopup(e) {
 popupButton.addEventListener('click' , togglePopup);
 popupModal.addEventListener('click' , togglePopup);
 
+const sandwichButton = document.querySelector('.sandwich');
+const sandwichList = document.querySelector('.navigation ul');
+
+function toggleSandwich(e) {
+    sandwichList.classList.toggle('sandwich-active');
+}
+sandwichButton.addEventListener('click' , toggleSandwich);
+$('.navigation ul li').on('click', toggleSandwich);
 
