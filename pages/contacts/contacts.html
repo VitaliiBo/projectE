@@ -9,41 +9,47 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ccc8866a-1088-462c-b26f-1185e83efd47&lang=ru_RU" type="text/javascript"></script>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <title>Element</title>
 </head>
 <body>
     <header>
-        <div class="header-box wrapper">
-            <div class="header-wrapper">
-            <div class="company">
-                <div class="logo"><img src="../../img/logo.png" alt="Логотип компании Элемент"></div>
-                <!-- <div class="company-name">Element</div> -->
+        <div class="header wrapper">
+            <div class="header-box">
+                <div class="header-box-company">
+                    <div class="header-box-company__logo"><img src="../../img/logo.png" alt="Логотип компании Элемент"></div>
+                    <!-- <div class="company-name">Element</div> -->
+                </div>
+                <div class="header-box-contacts">
+                    <a href="tel: +79637116325" class="link header-box__contacts__phone">+7 (963) 711-63-25</a>
+                    <a href="tel: +79262829641" class="link header-box__contacts__phone">+7 (926) 282-96-41</a><br>
+                    <a href="mailto: element-av@yandex.ru" class="link">element-av@yandex.ru</a>
+                </div>
             </div>
-            <div class="contacts">
-                <a href="tel: +79637116325" class="link phone">+7 (963) 711-63-25</a>
-                <a href="tel: +79262829641" class="link phone">+7 (926) 282-96-41</a><br>
-                <a href="mailto: element-av@yandex.ru" class="link">element-av@yandex.ru</a>
-            </div>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-list__item"><a href="../../index.html" class="nav-link">Главная</a></li>
+                    <li class="navigation-list__item"><a href="../about/about.html" class="nav-link">О компании</a></li>
+                    <li class="navigation-list__item"><a href="#" class="nav-link">Лицензии и Свидетельства</a></li>
+                    <li class="navigation-list__item"><a href="#" class="nav-link">Нормативы</a></li>
+                    <li class="navigation-list__item"><a href="#" class="nav-link nav-link-active">Контакты</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="navigation">
-            <ul>
-                <li><a href="../../index.html" class="link">Главная</a></li>
-                <li><a href="#" class="link">О компании</a></li>
-                <li><a href="#" class="link">Лицензии и Свидетельства</a></li>
-                <li><a href="#" class="link">Нормативы</a></li>
-                <li><a href="#" class="link">Контакты</a></li>
-            </ul>
-        </nav>
-    </div>
     </header>
     <main>
         <div class="content wrapper">
-            <div class="breadcrumbs">
-                <a href="../../index.html" class="link">Главная</a><span> - Контакты</span>
+            <div class="content-breadcrumbs">
+                <ul class="content-breadcrumbs__list">
+                    <li class="content-breadcrumbs__list-item"><a href="#" class="content-breadcrumbs__link">главная</a></li>
+                    <li class="content-breadcrumbs__list-item"><a href="#" class="content-breadcrumbs__link content-breadcrumbs__link-active">контакты</a></li>
+                </ul>
             </div>
-            <h1 class="content-title">Контакты</h1>
-            <section class="contacts-box">
+            <div class="content-title">
+                <h1 class="content-title__text">Контакты</h1>
+            </div>
+            <!-- <h1 class="content-title">Контакты</h1> -->
+            <section class="content-box">
                 <div class="contacts-box-row">
                     <div class="address">
                         <h4>Офис</h4>
@@ -71,18 +77,18 @@
         <div id="map" class="yandex-map" style="min-width: 100%; height: 417px"></div>
     </main>
     <footer>
-        <div class="footer-box wrapper">
-            <div class="footer-wrapper">
+        <div class="footer wrapper">
+            <div class="footer-box">
                 <nav class="navigation">
-                    <ul>
-                        <li><a href="../../index.html" class="link">Главная</a></li>
-                        <li><a href="#" class="link">О компании</a></li>
-                        <li><a href="#" class="link">Лицензии и Свидетельства</a></li>
-                        <li><a href="#" class="link">Нормативы</a></li>
-                        <li><a href="#" class="link">Контакты</a></li>
+                    <ul class="navigation-list">
+                        <li class="navigation-list__item"><a href="../../index.html" class="nav-link">Главная</a></li>
+                        <li class="navigation-list__item"><a href="#" class="nav-link nav-link-active">О компании</a></li>
+                        <li class="navigation-list__item"><a href="#" class="nav-link">Лицензии и Свидетельства</a></li>
+                        <li class="navigation-list__item"><a href="#" class="nav-link">Нормативы</a></li>
+                        <li class="navigation-list__item"><a href="#" class="nav-link">Контакты</a></li>
                     </ul>
                 </nav>
-                <div class="contacts">
+                <div class="footer-box__contacts">
                     <a href="tel: +79637116325" class="link phone">+7 (963) 711-63-25</a>
                     <a href="tel: +79262829641" class="link phone">+7 (926) 282-96-41</a><br>
                     <a href="mailto: element-av@yandex.ru" class="link">element-av@yandex.ru</a>
@@ -94,7 +100,7 @@
         </div>
     </footer>
 </body>
-<link rel="stylesheet" href="../../css/main.css">
+<!-- <link rel="stylesheet" href="../../css/main.css"> -->
 <link rel="stylesheet" href="../contacts/css/contacts.css">
 <script src="../../js/main.js"></script>
 <script src="../../js/contacts.js"></script>

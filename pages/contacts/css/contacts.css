@@ -1,3 +1,7 @@
+@import url('../../../css/global.css');
+@import url('../../../css/header.css');
+@import url('../../../css/footer.css');
+
 .content {
     padding-bottom: 0px;
 }
@@ -12,7 +16,7 @@
 .contacts-box-row {
     margin-right: auto;
     padding-top: 23px;
-    min-width: 393px;
+    /* min-width: 393px; */
 }
 
 .contacts-box-row h4{
