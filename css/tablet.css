@@ -1,0 +1,8 @@
+@media (min-width: 0px) and  (max-width: 768px) {
+    .navigation-list {
+        display: none;
+    }
+    .dropdown {
+        display: block;
+    }
+}
