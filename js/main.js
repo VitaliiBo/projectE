@@ -29,7 +29,7 @@ function pathChange(selector) {
         window.location.href = windowPathArr.join('');
         console.log(window.location.href = windowPathArr.join(''));   
     } else {
-        windowPathArr.push(selector);
+        windowPathArr.push('#' + document.querySelector(`a[data-service="${selector}"]`).dataset.service_name);
         window.location.href = windowPathArr.join('');
         console.log(window.location.href = windowPathArr.join('')); 
     }
