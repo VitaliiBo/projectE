@@ -11,7 +11,7 @@ function toggleService(e){
         this.closest('.service').classList.toggle('active');
         let selector = '#'+this.dataset.service;
         document.querySelector(selector).classList.toggle('service-active');
-        pathChange(selector);
+        pathChange(this.dataset.service);
         
         //  Смена услуги в POPUP по вкладке
         $(`option[value=${this.dataset.service}]`)[0].selected = true;
@@ -25,7 +25,7 @@ function pathChange(selector) {
     let windowPathArr = windowPath.split('#');
     if (windowPathArr.length > 1) {
         windowPathArr.pop();
-        windowPathArr.push(selector);
+        windowPathArr.push('#' + document.querySelector(`a[data-service="${selector}"]`).dataset.service_name);
         window.location.href = windowPathArr.join('');
         console.log(window.location.href = windowPathArr.join(''));   
     } else {
@@ -40,9 +40,9 @@ function serviceInit () {
     console.log(window.location.href.split('#'));
     if( windowPathArr.length > 1 ) {
         document.querySelector('.active').classList.toggle('active');
-        console.log(document.querySelector(`a[data-service="${windowPathArr.length-1}"]`));
+        console.log(document.querySelector(`a[data-service_name="${windowPathArr.length-1}"]`));
         
-        document.querySelector(`a[data-service="${windowPathArr[windowPathArr.length-1]}"]`).closest('.service').classList.toggle('active');
+        document.querySelector(`a[data-service_name="${windowPathArr[windowPathArr.length-1]}"]`).closest('.service').classList.toggle('active');
     }
 }
 document.onload = serviceInit();
