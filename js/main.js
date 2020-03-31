@@ -11,6 +11,7 @@ function toggleService(e){
         this.closest('.service').classList.toggle('active');
         let selector = '#'+this.dataset.service;
         document.querySelector(selector).classList.toggle('service-active');
+        pathChange(selector);
         
         //  Смена услуги в POPUP по вкладке
         $(`option[value=${this.dataset.service}]`)[0].selected = true;
@@ -19,10 +20,38 @@ function toggleService(e){
 }
 serviceLinks.forEach( item => item.addEventListener('click', toggleService));
 
-const popupModal = document.querySelector('.popup-modal-wrapper');
-const popupButton = document.querySelector('.popup-button');
+function pathChange(selector) {
+    let windowPath = window.location.href;
+    let windowPathArr = windowPath.split('#');
+    if (windowPathArr.length > 1) {
+        windowPathArr.pop();
+        windowPathArr.push(selector);
+        window.location.href = windowPathArr.join('');
+        console.log(window.location.href = windowPathArr.join(''));   
+    } else {
+        windowPathArr.push(selector);
+        window.location.href = windowPathArr.join('');
+        console.log(window.location.href = windowPathArr.join('')); 
+    }
+}
+
+function serviceInit () {
+    let windowPathArr = window.location.href.split('#');
+    console.log(window.location.href.split('#'));
+    if( windowPathArr.length > 1 ) {
+        document.querySelector('.active').classList.toggle('active');
+        console.log(document.querySelector(`a[data-service="${windowPathArr.length-1}"]`));
+        
+        document.querySelector(`a[data-service="${windowPathArr[windowPathArr.length-1]}"]`).closest('.service').classList.toggle('active');
+    }
+}
+document.onload = serviceInit();
+
 //=============================================================
 // Вызов POPUP окна
+const popupModal = document.querySelector('.popup-modal-wrapper');
+const popupButton = document.querySelector('.popup-button');
+
 function togglePopup(e) {
     if(e.toElement === $('.popup-close')[0]){
         e.preventDefault(); 
