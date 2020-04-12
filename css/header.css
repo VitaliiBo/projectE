@@ -8,10 +8,12 @@ header {
     display: flex;
     flex-direction: column;
     height: inherit;
+    justify-content: space-between;
 }
 
 .header-box {
     display: flex;
+    position: relative;
     justify-content: space-between;
 }
 
@@ -23,11 +25,24 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin: 12px 17px 0 0;
+    position: absolute;
+    right: 0;
+    margin: 32px 17px 20px 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: right;
+    letter-spacing: 0.05em;
+    color: var(--header-contacts-email);
 }
 
 .header-box__contacts__phone {
-    font-weight: bold;
+    display: inherit;
+    flex-direction: column;
+    color: #2A4C87;
+}
+.header-box__contacts__email {
+   
 }
 
 .navigation {
