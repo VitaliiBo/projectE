@@ -9,7 +9,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ccc8866a-1088-462c-b26f-1185e83efd47&lang=ru_RU" type="text/javascript"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="../contacts/css/contacts.css">
     <title>Element</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <div class="header wrapper">
             <div class="header-box">
                 <div class="header-box-company">
-                    <div class="header-box-company__logo"><img src="./img/logo.png" alt="Логотип компании Элемент"></div>
+                    <div class="header-box-company__logo"><img src="../../img/logo.png" alt="Логотип компании Элемент"></div>
                     <!-- <div class="company-name">Element</div> -->
                 </div>
                 <div class="header-box-contacts">
@@ -30,12 +31,12 @@
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
-                    <li class="navigation-list__item"><a href="./index.html" class="nav-link nav-link-active">Главная</a></li>
+                    <li class="navigation-list__item"><a href="../../" class="nav-link">Главная</a></li>
                     <li class="navigation-list__item"><a href="#" class="nav-link">Услуги</a></li>
-                    <li class="navigation-list__item"><a href="./pages/about/about.html" class="nav-link">О компании</a></li>
-                    <li class="navigation-list__item"><a href="#" class="nav-link">Лицензии и Свидетельства</a></li>
+                    <li class="navigation-list__item"><a href="./about.html" class="nav-link">О компании</a></li>
+                    <li class="navigation-list__item"><a href="../licenses/licenses.html" class="nav-link">Лицензии и Свидетельства</a></li>
                     <li class="navigation-list__item"><a href="#" class="nav-link">Нормативы</a></li>
-                    <li class="navigation-list__item"><a href="./pages/contacts/contacts.html" class="nav-link">Контакты</a></li>
+                    <li class="navigation-list__item"><a href="./contacts.html" class="nav-link nav-link-active">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -80,6 +81,7 @@
             </section>
         </div>
         <div id="map" class="yandex-map" style="min-width: 100%; height: 417px"></div>
+        <div class="main-background"></div>
     </main>
     <footer>
         <div class="footer wrapper">
@@ -107,7 +109,6 @@
     </footer>
 </body>
 <!-- <link rel="stylesheet" href="../../css/main.css"> -->
-<link rel="stylesheet" href="../contacts/css/contacts.css">
 <script src="../../js/main.js"></script>
 <script src="../../js/contacts.js"></script>
 </html>

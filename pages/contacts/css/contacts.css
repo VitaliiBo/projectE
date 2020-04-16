@@ -5,12 +5,14 @@
 .content {
     padding-bottom: 0px;
 }
+.content-box {
+    background-color: #FFF;
+}
 
 .contacts-box {
     display: flex;
     flex-grow: 1;
     padding: 0 0 0 20px;
-    background-color: #E9E9E9;
 }
 
 .contacts-box-row {
@@ -19,6 +21,16 @@
     /* min-width: 393px; */
 }
 
-.contacts-box-row h4{
+.contacts-box-row h4 {
     font-weight: 700;
+    color: #052763;
+}
+
+.contacts-box-row p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+.howtoget p {
+    font-weight: bold;
 }
