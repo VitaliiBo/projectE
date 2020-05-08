@@ -68,20 +68,22 @@ const popupModal = document.querySelector('.popup-modal-wrapper');
 const popupButton = document.querySelector('.popup-button');
 
 function togglePopup(e) {
+    // e.preventDefault();
     if(e.toElement === $('.popup-close')[0]){
         e.preventDefault(); 
     }
-    // e.preventDefault();
     if(popupModal.classList.contains('popup-active')){
         if(e.toElement === popupModal || e.toElement === $('.popup-close')[0]){
             popupModal.classList.toggle('popup-active');
         }
     } else {
+        e.preventDefault();
         popupModal.classList.toggle('popup-active');
     }
 }
 if(popupButton != null){
     popupButton.addEventListener('click' , togglePopup);
+    $('.popup-button').on('click' , togglePopup);
 }
 if(popupModal != null){
     popupModal.addEventListener('click' , togglePopup);
@@ -103,11 +105,14 @@ function handlePopupSubmit(e) {
     formData.delete('service');
     formData.append('service', getSelectedOption() );
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://element/php/mail.php');
-    xhr.responseType = 'json';
+    xhr.open('POST',  `${location.origin}/php/mail.php` ); //'http://element-pb.ru/php/mail.php' `${location.origin}/php/mail.php`
+    // xhr.responseType = 'json';
     xhr.send( formData );
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status == 200){
+            console.log(Array.from(xhr.response));
+            
+            console.log(JSON.parse(xhr.response));
             if (xhr.response === true) {
                 document.querySelector('.form-box__send-button').innerHTML = 'отправлено';
                 if (xhr.response === true) {
@@ -130,6 +135,9 @@ function getSelectedOption () {
             selectedOption = element.innerHTML;
         }
     });
+    if ( selectedOption === undefined ) {
+        selectedOption = 'Узнать стоимость'
+    }
     return selectedOption;
 }
 
@@ -139,7 +147,9 @@ function getSelectedOption () {
 //============== ОЧИСТКА ФОРМЫ ==============
 function formReset() {
   $('#callback-form')[0].reset();
-  $('.popup-file__success')[0].innerHTML = '';
+  if ( $('.popup-file__success')[0] != undefined ){
+    $('.popup-file__success')[0].innerHTML = '';
+  }
   $('.form-box__send-button')[0].innerHTML = 'Отправить';
 }
 //=============================================================
@@ -224,3 +234,77 @@ function checkFields () {
     }
 }
 $('#callback-form').on('input', checkFields);
+
+//=============== Мобильное МЕНЮ==============================
+const menuCloseButton = $('.navigation__close');
+const menuOpenButton = $('.navigation-menu-button');
+
+menuOpenButton.on('click', () => {$('.navigation').addClass('navigation-active')});
+menuCloseButton.on('click', () => {$('.navigation').removeClass('navigation-active')});
+
+//=============== Кнопка НАВЕРХ ==============================
+const toTopButton = $('.backtotop-button');
+if (toTopButton[0] != undefined) {
+    $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+            toTopButton.fadeIn();
+        } else {
+            toTopButton.fadeOut();
+        }
+    });
+    
+    toTopButton.click(function (e) {
+        e.preventDefault();
+       //1 second of animation time
+       //html works for FFX but not Chrome
+       //body works for Chrome but not FFX
+       //This strange selector seems to work universally
+       $("html, body").animate({scrollTop: 0}, 1000);
+    });
+}
+
+//============== Кнопки ВЛЕВО ВПРАВО =======================
+const servicesRight = $('.service-right');
+const servicesLeft = $('.service-left');
+const servicesBox = $('.services');
+
+const scrollLength = () => servicesBox[0].scrollWidth - servicesBox[0].offsetWidth;
+
+if (servicesRight[0] != undefined) {
+    servicesBox.scroll(function() {
+        if ($('.services').scrollLeft()) {
+            servicesLeft.fadeIn();
+        } else {
+            servicesLeft.fadeOut();
+        }
+        if ($('.services')[0].scrollLeft !== scrollLength()) {
+            servicesRight.fadeIn();
+        } else {
+            servicesRight.fadeOut();
+        }
+    });
+    
+    servicesRight.click(function (e) {
+        e.preventDefault();
+       servicesBox.animate({scrollLeft: servicesBox[0].scrollLeft + 300}, 300);
+    });
+    servicesLeft.click(function (e) {
+        e.preventDefault();
+       servicesBox.animate({scrollLeft: 0}, 300);
+    });
+}
+
+//=================== Minimixed HEADER APEARE =================
+$(window).scroll(function() {
+    if ($(window).width() <= 986) {
+        if ($(window).scrollTop() >= 55 && !$('.header-minimize')[0]) {
+            $('.header').css({'top': '-55px'});
+            $('.header').addClass('header-minimize');
+            $('.header').animate({top: "0px"}, 300);
+        } else if ($(window).scrollTop() <= 55 && $('.header-minimize')[0]) {
+            $('.header').animate({top: "-55px"}, 300, "swing", function() {
+                $('.header').removeClass('header-minimize');
+            } );
+        }
+    }
+});

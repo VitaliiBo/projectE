@@ -1,5 +1,5 @@
 footer {
-    height: 135px;
+    /* height: 135px; */
     background: var(--footer-bg);
     color: var(--footer-nav-link);
     /* margin-top: auto; */
