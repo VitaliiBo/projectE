@@ -64,7 +64,7 @@ try {
   if (!$mail->send()) {
     echo 'Mailer Error: '. $mail->ErrorInfo;
 } else {
-    echo 'true';
+    echo "{answer: true}";
 }
 
 } catch (Exception $e) {

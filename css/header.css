@@ -88,7 +88,7 @@ header {
 .navigation-burger::before {
     content: "";
     position: absolute;
-    display: block;
+    display: inherit;
     width: var(--burger-width);
     height: var(--burger-thin);
     background: var(--burger-color);
@@ -98,7 +98,7 @@ header {
 .navigation-burger::after {
     content: "";
     position: absolute;
-    display: block;
+    display: inherit;
     width: var(--burger-width);
     height: var(--burger-thin);
     background: var(--burger-color);

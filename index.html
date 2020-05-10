@@ -8,6 +8,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ccc8866a-1088-462c-b26f-1185e83efd47&lang=ru_RU" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <title>ООО Элемент</title>
@@ -247,8 +248,32 @@
                   </div> -->
 
             </section>
+            <section class="mobile-content">
+              <div class="mobile-content__discription">
+                <p>ООО «Элемент» - это компания специалистов, способных выполнить работы по обеспечению безопасности зданий и сооружений любой сложности.</p>
+                <div class="discription-links">
+                  <a href="./pages/about/about.html" class="link">Подробнее о компании</a>
+                  <a href="./pages/licenses/licenses.html" class="link">Лицензии и свидетельства</a>
+                </div>
+              </div>
+              <div class="mobile-content__navigation">
+                <div class="navigation-button">
+                  <a href="./pages/services/services.html" class="link">Наши услуги</a>
+                </div>
+                <div class="navigation-button">
+                  <a href="./pages/standards/standards.html" class="link">По каким нормативам мы работаем?</a>
+                </div>
+                <div class="callback-popup navigation-button">
+                  <div class="link popup-button">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</div>
+                </div>
+              </div>
+              <div class="mobile-content__location">
+                <div id="map" class="yandex-map" style="min-width: 100%; height: 271px"></div>
+              </div>
+            </section>
+            <div class="main-background"></div>
         </div>
-        <!-- <div class="main-background"></div> -->
+        
     </main>
     <footer>
         <div class="footer wrapper">
@@ -283,7 +308,7 @@
                 </div>
             </div>
             <a href="#" class="popup-close link">[ x ]</a>
-            <form action="" id="callback-form">
+            <form action="" id="callback-form" name="callback-form">
                 <div class="form-box">
                     <span>Тема сообщения:</span>
                     <select name="service" id="service-select" class="form-item field">
@@ -292,6 +317,7 @@
                         <option value="service3" class="field">Разработка документации</option>
                         <option value="service4" class="field">Тех. обслуживание и ремонт</option>
                         <option value="service5" class="field">Пожарная безопасность под ключ</option>
+                        <option value="Consultation" class="field">Консультация</option>
                     </select>
                     <input type="name" name="name" placeholder="Ваше имя*" class="form-item field">
                     <input type="phone" name="phone" placeholder="Номер телефона*" class="form-item field form-box__phone-field" pattern="[+][7][(][0-9]{3}[)][ ][0-9]{3}[-][0-9]{4}">

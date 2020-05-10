@@ -35,6 +35,9 @@
         display: block;
     }
     /******** MAIN *********/
+    .main-background {
+        background-size: 330px;
+    }
     .content {
         padding: 46px 0 0 0;
         background-size: 330px;
@@ -180,11 +183,11 @@
         background-position-x: 180px;
     }
     .fire-safety .content-box__text-title {
-        font-size: 22px;
-        margin: 22px 0 0 0;
+        font-size: 17px;
+        margin: 22px 0 20px 0;
     }
     .fire-safety .content-box__text-price-button {
-        margin: 50px 0 0 0;
+        margin: 18px 0 0 0;
     }
     .services-page .content-box__text {
         max-width: 325px;
@@ -196,7 +199,6 @@
         background-size: 25px;
     }
     .content-box__text-title {
-        max-width: 293px;
         font-size: 16px;
         line-height: 19px;
         letter-spacing: 0.05em;
@@ -293,6 +295,7 @@
     }
     .header-minimize .header-box__contacts__phone :nth-child(n+2) {
         margin-left: 20px;
+        margin-right: 20px;
     }
     .header-minimize .navigation-menu-button {
         --burger-width: 30px;

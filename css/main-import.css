@@ -358,3 +358,7 @@ main {
     color: #fff;
     background-color: #FF742D;
 }
+/*MOBILE CONTENT*/
+.mobile-content {
+    display: none;
+}
