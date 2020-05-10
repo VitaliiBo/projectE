@@ -19,6 +19,12 @@ header {
 
 .header-box-company__logo {
     margin: 25px 0 0 0;
+    width: 233px;
+    height: 50px;
+}
+.header-box-company__logo img {
+    width: inherit;
+    height: inherit;
 }
 
 .header-box-contacts {

@@ -310,4 +310,26 @@
     .license:nth-child(2n) {
         margin-top: 20px;
     } */
+
+    /*===== Contacts =====*/
+    .contacts-box-row {
+        padding-right: 20px;
+    }
+
+    /*======= STANDARDS ======*/
+    .standards .content-box__text-p {
+        max-height: unset;
+        overflow: unset;
+    }
+
+    .standards .content-box__text {
+        max-height: unset;
+    }
+    .content-box__text-button__link span {
+        top: 30%;
+    }
+    .link__arrow {
+        float: right;
+        right: 4%;
+    }
 }

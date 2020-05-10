@@ -307,52 +307,117 @@ $(window).scroll(function() {
 });
 //=============================================================
 // Яндекс карты
-ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.84765663, 37.50505730],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 16
-        });
-        var myPlacemark = new ymaps.GeoObject({
-            geometry: {
-                type: "Point",
-                coordinates: [55.84765663, 37.50505730]
+if (typeof ymaps !== 'undefined') {
+    ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.84765663, 37.50505730],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 16
+            });
+            var myPlacemark = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point",
+                    coordinates: [55.84765663, 37.50505730]
+                }
             }
+            );
+            myMap.geoObjects.add(myPlacemark);
         }
-        );
-        myMap.geoObjects.add(myPlacemark);
-    }
+}
 //=============================================================
 //Изменение POPUP для Моб. версии
 const popupTitle = $('.popup-title').prop('innerHTML');
 const popupTitleText = $('.popup-title-text').prop('innerHTML');
 const checkboxTextSpan = $('.checkbox-text span').prop('innerHTML');
 
-function changeTexts () {
-    if ( $(window).width() <= 450 && $('.chckbx').prop('required') ){
+function changeTexts ( modal ) {
+    if ( modal === 'main' ) {
         $('.chckbx').prop('required', false);
         $('option:nth-child(6)').prop('selected', true);
         $('.popup-title').prop('innerText', 'Пожалуйста, заполните форму');
         $('.popup-title-text').prop('innerText', 'Наши специалисты свяжутся с Вами в ближайшее время!');
         $('.checkbox-text span').prop('innerText', 'Нажимая кнопку ниже, Вы даете свое согласие с');
     }
+    if ( modal === 'services' ) {
+        $('.checkbox-text span').prop('innerText', 'Нажимая кнопку ниже, Вы даете свое согласие с');
+    }     
 }
-changeTexts();
-
-$(window).on('resize', function(){
-    if ( $(window).width() <= 450 && $('.chckbx').prop('required') ){
-        changeTexts();        
-    } else if ( $(window).width() > 450 && !$('.chckbx').prop('required') ){
+function changeTextsBack ( modal ) {
+    if ( modal = 'main' ) {
         $('.chckbx').prop('required', true);
-        $('.popup-title').prop('innerHTML', `${popupTitle}`);
-        $('.popup-title-text').prop('innerHTML', `${popupTitleText}`);
+            $('.popup-title').prop('innerHTML', `${popupTitle}`);
+            $('.popup-title-text').prop('innerHTML', `${popupTitleText}`);
+            $('.checkbox-text span').prop('innerHTML', `${checkboxTextSpan}`);
+    }
+    if ( modal === 'services' ) {
         $('.checkbox-text span').prop('innerHTML', `${checkboxTextSpan}`);
+    }  
+}
+
+if ( $(window).width() <= 450 && $('.chckbx').prop('required') && $('.main-modal')[0] ){
+    changeTexts( 'main' );
+} else if ( $(window).width() <= 450 && $('.chckbx').prop('required') && $('.services-modal')[0] ){
+    changeTexts( 'services' );
+}
+$(window).on('resize', function(){
+    if ( $(window).width() <= 450 && $('.chckbx').prop('required') && $('.main-modal')[0] ){
+        changeTexts('main');        
+    } else if ( $(window).width() > 450 && !$('.chckbx').prop('required') && $('.main-modal')[0] ){
+        changeTextsBack('main');
+    }
+    if ( $(window).width() <= 450 && $('.chckbx').prop('required') && $('.services-modal')[0] ){
+        changeTexts('services');        
+    } else if ( $(window).width() > 450 && !$('.chckbx').prop('required')  && $('.services-modal')[0]){
+        changeTextsBack('services');
+    }   
+})
+
+//===============================================================
+// Изменение Кнопок Нормативов
+const buttonText = $('.content-box__text-button__link span').prop('innerHTML');
+
+function changeButtonText () {
+    $('.content-box__text-button__link span').prop('innerHTML', 'СМОТРЕТЬ');    
+}
+function changeButtonTextBack () {
+    $('.content-box__text-button__link span').prop('innerHTML', `${buttonText}`);
+}
+
+if ( $(window).width() <= 710 && $('.standards')[0] ){
+    changeButtonText();
+}
+$(window).on('resize', function(){
+    if ( $(window).width() <= 710 && $('.standards')[0] ){
+        changeButtonText();        
+    } else if ( $(window).width() > 710 && $('.standards')[0] ){
+        changeButtonTextBack();
     }
 })
+//===============================================================
+// Копирование КАК ДОБРАТСЬЯ
+const howToGet = $('.howtoget');
+
+if ( $(window).width() <= 450 && $('.contacts-box')[0] ){
+    $('<div>', {'class': 'contacts-box-row third-col'}).appendTo('.contacts-box');
+    howToGet.appendTo('.contacts-box-row:nth-child(3)');
+}
+$(window).on('resize', function(){
+    if ( $(window).width() <= 450 && $('.address + .howtoget')[0] && !$('.third-col')[0] ){
+        $('<div>', {'class': 'contacts-box-row third-col'}).appendTo('.contacts-box');
+        howToGet.appendTo('.contacts-box-row:nth-child(3)');        
+    } else if ($(window).width() <= 450 && $('.address + .howtoget')[0] && $('.third-col')[0]) {
+        howToGet.appendTo('.contacts-box-row:nth-child(3)');
+    }
+    if ( $(window).width() > 450 && $('.contacts-box .howtoget')[0] ){
+        howToGet.appendTo('.contacts-box-row:nth-child(1)'); 
+    }
+})
+
+

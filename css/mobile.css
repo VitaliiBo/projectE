@@ -1,7 +1,7 @@
 @media (min-width: 0px) and  (max-width: 450px) {
     /**======= HEADER =======**/
     header {
-        z-index: 1;
+        z-index: 100;
     }
     .header {
         align-items: initial;
@@ -71,17 +71,44 @@
     }
 
     /**======== MAIN ========**/
+    .content-breadcrumbs {
+        top: 100px;
+        z-index: 1;
+        font-size: 11px;
+    }
+    .content-breadcrumbs__list {
+        margin: 0 0 0 22px;
+    }
+    .content-breadcrumbs + .content-title {
+        position: relative;
+        top: 15px;
+    }
+    .content-breadcrumbs__link, .content-breadcrumbs__link:visited, .content-breadcrumbs__link:hover, .content-breadcrumbs__link:focus, .content-breadcrumbs__link-active, .content-breadcrumbs__link-active:visited, .content-breadcrumbs__link-active:hover, .content-breadcrumbs__link-active:focus {
+        color: inherit;
+    }
+    .content-breadcrumbs + .content-title .content-title__text {
+        padding-top: 0px;
+        height: 61px;
+        display: flex;
+        align-items: flex-end;
+    }
+    main .content-box, .standards.content-box {
+        padding-top: 20px;
+    }
+
+
     .mobile-content {
         display: block;
     }
     main {
         padding: 0;
+        margin-bottom: 0;
     }
     .content {
         padding: 43px 0 0 0;
     }
     .content-title__text {
-        padding: 0 0 0 4%;
+        padding: 0 0 0 5%;
         font-size: 27px;
         margin: 0 0 3px 0
     }
@@ -200,6 +227,10 @@
     .footer .navigation-list {
         flex-direction: column;
         align-items: center;
+        margin: 10px 0 30px 0;
+    }
+    .footer .navigation-list__item:nth-child(n+1) {
+        margin-left: 0;
     }
     .footer .navigation-list__item:nth-child(n+2) {
         margin-top: 10px;
@@ -259,6 +290,121 @@
         height: 49px;
         font-size: 18px;
         letter-spacing: 0.22em;
+    }
+
+    /*========   SERVICES-PAGE   ========== */
+    .services-page.content-box {
+        flex-direction: column;
+        padding: 51px 20px 60px;
+        margin-bottom: 0;
+    }
+    .services-page .content-box__text, .services-page .content-box__text .fire-safety {
+        width: initial;
+        max-width: initial;
+    }
+    .services-page .content-box__text.fire-safety {
+        background-image: unset;
+    }
+    .services-page .fire-safety .content-box__text-title {
+        position: relative;
+        font-size: 18px;
+        line-height: 21px; 
+    }
+    .services-page .fire-safety .content-box__text-title::after {
+        content: "Берем все заботы на себя";
+        display: block;
+        position: absolute;
+        bottom: -35px;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    .fire-safety .content-box__text-price-button {
+        height: 29px;
+        margin: 45px 0 0 0;
+    }
+
+    .content-box-col:nth-child(n+2) {
+        margin: 28px 0 0 0;
+    }
+    .content-box__text-service-logo {
+        display: none;
+    }
+    .services-page .content-box__text-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .content-box__text-service-list {
+        margin: 9px 0 0 0;
+    }
+    .content-box__text-price-button {
+        width: 100%;
+        height: 29px;
+    }
+
+    .backtotop {
+        bottom: 25px;
+    }
+
+    /*======= STANDARDS ======*/
+    .standards.content-box {
+        padding-left: 20px;
+        padding-right: 22px;
+        padding-bottom: 51px;
+        margin-bottom: 0;
+    }
+    .standards .content-box__text-p {
+        max-height: unset;
+        overflow: unset;
+    }
+
+    .standards .content-box__text {
+        max-height: unset;
+    }
+
+    .standards .content-box__text-button__link {
+        padding: 0 0 0 17px;
+    }
+    .content-box__text-button__link span {
+        top: 30%;
+    }
+    .link__arrow {
+        float: right;
+        right: 4%;
+    }
+
+    /* ===== CONTACTS  =====*/
+    .contacts-box {
+        flex-direction: column;
+        padding: 0;
+    }
+    .download-company-card {
+        display: none;
+    }
+    .contacts-box-row:nth-child(1) p {
+        font-weight: 500;
+    }
+    .contacts-box-row:nth-child(2) p {
+        font-size: 12px;
+    }
+    /* ===== Fire-Safety ===== */
+    .back-button {
+        display: none;
+    }
+    .fire-safety.content-box  {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+    .content-box__text-group {
+        margin-left: 0;
+    }
+    .fire-safety .text-group__list-item span {
+        display: inline;
+    }
+    
+    /*======  labour-protection  ======*/
+    .labour-protection.content-box  {
+        margin-bottom: 0;
+        padding-left: 20px;
     }
 }
 /* @media (min-width: 0px) and  (max-width: 425px) {
