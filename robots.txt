@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /php/
+Disallow: /js/
+Disallow: /img/
+Disallow: /css/
+Sitemap: http://element-pb.ru/sitemap.xml

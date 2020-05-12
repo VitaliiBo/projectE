@@ -110,6 +110,9 @@ function handlePopupSubmit(e) {
     xhr.send( formData );
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status == 200){
+            console.log(xhr);
+            
+            
             if (xhr.response === true) {
                 document.querySelector('.form-box__send-button').innerHTML = 'отправлено';
                 if (xhr.response === true) {

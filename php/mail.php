@@ -18,7 +18,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+     $mail->SMTPDebug = 0; //SMTP::DEBUG_SERVER;                      // Enable verbose debug output
      $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.ht-systems.ru';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -64,7 +64,7 @@ try {
   if (!$mail->send()) {
     echo 'Mailer Error: '. $mail->ErrorInfo;
 } else {
-    echo "{answer: true}";
+    echo "true";
 }
 
 } catch (Exception $e) {

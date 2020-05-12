@@ -75,6 +75,7 @@
         top: 100px;
         z-index: 1;
         font-size: 11px;
+        letter-spacing: 0.145em;
     }
     .content-breadcrumbs__list {
         margin: 0 0 0 22px;
@@ -83,9 +84,9 @@
         position: relative;
         top: 15px;
     }
-    .content-breadcrumbs__link, .content-breadcrumbs__link:visited, .content-breadcrumbs__link:hover, .content-breadcrumbs__link:focus, .content-breadcrumbs__link-active, .content-breadcrumbs__link-active:visited, .content-breadcrumbs__link-active:hover, .content-breadcrumbs__link-active:focus {
+    /* .content-breadcrumbs__link, .content-breadcrumbs__link:visited, .content-breadcrumbs__link:hover, .content-breadcrumbs__link:focus, .content-breadcrumbs__link-active, .content-breadcrumbs__link-active:visited, .content-breadcrumbs__link-active:hover, .content-breadcrumbs__link-active:focus {
         color: inherit;
-    }
+    } */
     .content-breadcrumbs + .content-title .content-title__text {
         padding-top: 0px;
         height: 61px;
@@ -207,6 +208,28 @@
         background-position: 97%;
         background-repeat: no-repeat;
     }
+    .navigation-button:nth-child(3) .popup-button {
+        background-image: url('../img/svg/mobile-consultation-icon1-mirrored.svg');
+        background-size: 65px;
+        background-position: 3%;
+        background-repeat: no-repeat;
+    }
+    .location-howtofind {
+        padding: 37px 40px 12px 23px;
+        background-color: #fff;
+    }
+    .howtofind-title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+
+        color: #052763;
+    }
+    .howtofind-address {
+        font-size: 14px;
+        line-height: 126.36%;
+    }
 
     /**======= FOOTER =======**/
     .footer-box {
@@ -307,8 +330,10 @@
     }
     .services-page .fire-safety .content-box__text-title {
         position: relative;
+        max-width: 230px;
         font-size: 18px;
         line-height: 21px; 
+        color: #FFF;
     }
     .services-page .fire-safety .content-box__text-title::after {
         content: "Берем все заботы на себя";
@@ -332,6 +357,7 @@
     .services-page .content-box__text-title {
         font-size: 18px;
         font-weight: bold;
+        color: #052763;
     }
     .content-box__text-service-list {
         margin: 9px 0 0 0;
@@ -343,6 +369,20 @@
 
     .backtotop {
         bottom: 25px;
+    }
+
+    .services-modal .popup-modal {
+        width: unset;
+        height: unset;
+    }
+    .services-modal .popup-title-text {
+        display: none;
+    }
+    .services-modal .popup-title {
+        width: unset;
+    }
+    .services-modal .checkbox-text {
+        font-size: 10px;
     }
 
     /*======= STANDARDS ======*/
@@ -373,6 +413,9 @@
     }
 
     /* ===== CONTACTS  =====*/
+    .contacts.content-box {
+        padding: 20px 0 0 0;
+    }
     .contacts-box {
         flex-direction: column;
         padding: 0;
@@ -380,11 +423,19 @@
     .download-company-card {
         display: none;
     }
+    .contacts-box-row {
+        padding: 23px 22px 0 21px;
+        width: 100%;
+    }
     .contacts-box-row:nth-child(1) p {
         font-weight: 500;
     }
+    .contacts-box-row:nth-child(2) {
+        background-color: #E5E5E5;
+    }
     .contacts-box-row:nth-child(2) p {
         font-size: 12px;
+        font-weight: 500;
     }
     /* ===== Fire-Safety ===== */
     .back-button {
@@ -405,6 +456,40 @@
     .labour-protection.content-box  {
         margin-bottom: 0;
         padding-left: 20px;
+    }
+
+    /*======  LICENSES  =======*/
+    .license__discription {
+        display: none;
+    }
+
+    /*========  ABOUT  =========*/
+    .about.content-box {
+        padding: 0;
+    }
+    .about.content-box > :nth-child(n) {
+        padding: 20px 21px 0 22px;
+    }
+    .about.content-box  .content-box__text:nth-child(2) {
+        display: block;
+        padding-top: 30px;
+        order: 3;
+    }
+    .about.content-box .content-box__gallery {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #E5E5E5;
+    }
+    .about .content-box__gallery img {
+        width: 100%;
+        /* max-height: inherit; */
+        object-fit: contain;
+    }
+    .content-box__text-p {
+        margin-right: 14px;
+    }
+    .content-box__text:nth-child(1) > .content-box__text-p:nth-child(n+3) {
+        display: none;
     }
 }
 /* @media (min-width: 0px) and  (max-width: 425px) {
